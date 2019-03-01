@@ -198,6 +198,8 @@ git命令
 		git add . //文件，文件夹添加到本地仓库（.是全部，也可以是单个文件只需把.改为文件名）
 		git commit -m '注释'//项目提交到本地仓库	
 		git push -u origin master //推送到远程仓库
+	取回github更新
+		$ git pull origin master
 Jekyll命令
 	jekyll serve //启动jekyll服务
 
