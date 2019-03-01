@@ -201,7 +201,8 @@ git命令
 	取回github更新
 		$ git pull origin master
 	本地git生成公钥
-		$ ssh-keygen -t rsa -C "你的邮箱"
+		$ ssh-keygen -t rsa -C "你的邮箱" //公钥用于添加到github
+	注：克隆后必须到克隆的仓库文件夹下才能push
 Jekyll命令
 	jekyll serve //启动jekyll服务
 
