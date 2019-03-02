@@ -205,6 +205,7 @@ git命令
 	注：克隆后必须到克隆的仓库文件夹下才能push
 Jekyll命令
 	jekyll serve //启动jekyll服务
+	jekyll serve --incremental //启动jekyll,并且热替换
 	gem install jekyll-paginate //启动报依赖错误是运行此命令
 jekyll-paginate
 
