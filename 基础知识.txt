@@ -207,6 +207,7 @@ Jekyll命令
 	jekyll serve //启动jekyll服务
 	jekyll serve --incremental //启动jekyll,并且热替换
 	gem install jekyll-paginate //启动报依赖错误是运行此命令
+        jekyll解析markdown有时区问题需要加上时区格式：date:       2019-03-04 10:20:00 UTC+8
 jekyll-paginate
 
 Markdown语法
