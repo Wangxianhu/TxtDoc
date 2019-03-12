@@ -208,7 +208,11 @@ Jekyll命令
 	jekyll serve --incremental //启动jekyll,并且热替换
 	gem install jekyll-paginate //启动报依赖错误是运行此命令
         jekyll解析markdown有时区问题需要加上时区格式：date:       2019-03-04 10:20:00 UTC+8
-jekyll-paginate
+dos命令
+	d:	(切换盘符)
+	cd\	(跳到根目录)
+	cd doca\docb\	(跳转目录)
+	dir	(查看路径下文件和文件夹)	
 
 Markdown语法
 	
