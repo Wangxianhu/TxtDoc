@@ -97,7 +97,7 @@ freeCodeCamp js
 		7、object(对象)
 	注意
 		1、未实例化的变量初始值为undefined
-		2、运算undefined值时结果为NaN,意思是Not a Number
+		2、运算undefined值时结果为NaN,意思是Not a Number，判断是否是NaN只需判断是否与自身相等即可
 	js常用属性
 		.length 获取字串长度
 	js是基于零的索引，js可以直接在字符串上用中括号直接获取字符 例；var myName = "xiaoming";myName[0];
@@ -151,6 +151,7 @@ freeCodeCamp js
 				}
 				使用
 				var myCar = new Car(4,2);
+	js多参写法 function myfun(...vars) {} //js多参写法，取参数时类似数组
 	js数组常用方法
 		迭代方法用map，旧数组不变，新数组中每个变量加val
 			例：var newArray = oldArray.map(function(val){
@@ -172,9 +173,28 @@ freeCodeCamp js
 			例：myArray.reverse();
 		数组拼接concat，旧数组不变
 			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组
+		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）
+				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量
 	js字符串
 		字符串分解为数组var array = string.split(s);//s为分解的字符，可以为""空字符串
 		数组转换为字符串var string = array.join(s);//s为连接符，可以为""空字符串
+		字符串根据正则替换var str1 = str.replace(reg,s);//reg为正则，s为要替换后的字串
+		字符串大小写转换var str1 = str.toLowerCase();//转换为小写
+		字符串大小写转换var str1 = str.toUpperCase();//转换为大写
+		字符串提取var str1 = str.substring(start,stop);//提取字符串str的子字符串start开始，stop结束，包头不包尾
+		字符串查找var i = str.indexOf(str1);//查找字符串在另一字符串中的位置如果没有返回-1，此方法也可用于数组
+		字符串查找var charcode = str.charCodeAt(index);//查找指定下标的字符Unicode数字，index下标，charcode为unicode数字，没有时返回NaN
+		unicode数字转字符串var str = String.fromCharCode(charcode1,charcode2...);//str为charcode转换后的字符串，入参可以有多个
+	json和ajax
+		获取json的ajax $.getJSON("url",function(json){});//url为地址，json为json对象
+		json对象转为字符串 var str = JSON.stringify(json);//json为json对象，str为字符串
+		js对象循环 json.forEach(function(val){});//json为js对象，val遍历出的值，json可以为json对象也可以是js对象
+		获取js对象的所有key var keys = Object.keys(obj);//obj为js对象，keys为obj的所有key组成的数组
+		获取经纬度代码if(navigator.geolocation){
+						navigator.geolocation.getCurrentPosition(function(position){
+						  $("#data").html("latitude:"+position.coords.latitude+"<br>longitude:"+position.coords.longitude);
+						});
+					  }
 js正则
 	用法:
 	var exp = /and/gi;
