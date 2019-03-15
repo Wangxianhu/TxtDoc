@@ -233,8 +233,15 @@ dos命令
 	cd\	(跳到根目录)
 	cd doca\docb\	(跳转目录)
 	dir	(查看路径下文件和文件夹)	
-
-Markdown语法
+vue
+	定义:<script>new Vue({el:'#select',data:{message:''}})</script>;
+	使用:<div id='select'>{{message}}</div>;
+	注意：
+		1、JavaScript代码需要放在指定HTML元素之后
+		2、取数据时双大括号内的变量是Vue定义data一个大括号内的变量，注意对应好
+	vue的循环用法：<li v-for="todo in todos">{{todo.name}}</li>；//只需要在标签上加v-for属性，属性值是model数组和循环后的属性
+小技巧
+	get方法中文转换为utf-8方法 encodeURI
 	
 	
 	
