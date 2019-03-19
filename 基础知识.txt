@@ -240,6 +240,28 @@ vue
 		1、JavaScript代码需要放在指定HTML元素之后
 		2、取数据时双大括号内的变量是Vue定义data一个大括号内的变量，注意对应好
 	vue的循环用法：<li v-for="todo in todos">{{todo.name}}</li>；//只需要在标签上加v-for属性，属性值是model数组和循环后的属性
+pug
+	个人理解：pug是html的模板，用来减少代码量的
+	语法：
+		label
+		  input(type="checkbox")
+		  span 记住密码
+		  .show-box
+	解释：
+		实际最后生成html为
+		<label>
+			<input type="checkbox"/>
+			<span>记住密码</span>
+			<div class=".show-box"></div>
+		</label>
+		1、pug通过两个空格来标记包含关系
+		2、通过一个空格加文字来添加文字
+		3、通过括号来添加属性
+		4、通过.类名#id名来添加类或id
+		5、div可以不写
+Angular
+
+
 小技巧
 	get方法中文转换为utf-8方法 encodeURI
 	
