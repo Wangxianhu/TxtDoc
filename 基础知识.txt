@@ -157,7 +157,7 @@ freeCodeCamp js
 			例：var newArray = oldArray.map(function(val){
 				  return val+3;
 				});
-		归纳累加方法reduce，旧数组不变，新变量为数组数之和加上第二个参数7（或者不用第二个变量）
+		归纳累加方法reduce，旧数组不变，新变量为数组数之和加上第二个参数7（或者不用第二个变量，这是便是纯数组累加）
 			例：var singleVal = array.reduce(function(pre,curr){
 				  return pre+curr;
 				},7);
@@ -175,6 +175,9 @@ freeCodeCamp js
 			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组
 		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）
 				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量
+		取数组最大或最小值
+			Math.max(...arr);或Math.max(8,9,7);//取最大值，两种写法，一入参纯数字，二入参为数组
+			Math.min(...arr);或Math.min(8,9,7);//取最小值，两种写法，一入参纯数字，二入参为数组
 	js字符串
 		字符串分解为数组var array = string.split(s);//s为分解的字符，可以为""空字符串
 		数组转换为字符串var string = array.join(s);//s为连接符，可以为""空字符串
@@ -182,13 +185,14 @@ freeCodeCamp js
 		字符串大小写转换var str1 = str.toLowerCase();//转换为小写
 		字符串大小写转换var str1 = str.toUpperCase();//转换为大写
 		字符串提取var str1 = str.substring(start,stop);//提取字符串str的子字符串start开始，stop结束，包头不包尾
+		字符串提取var str1 = str.substr(start,length);//提取字符串start开始下标，length截取长度
 		字符串查找var i = str.indexOf(str1);//查找字符串在另一字符串中的位置如果没有返回-1，此方法也可用于数组
 		字符串查找var charcode = str.charCodeAt(index);//查找指定下标的字符Unicode数字，index下标，charcode为unicode数字，没有时返回NaN
 		unicode数字转字符串var str = String.fromCharCode(charcode1,charcode2...);//str为charcode转换后的字符串，入参可以有多个
 	json和ajax
 		获取json的ajax $.getJSON("url",function(json){});//url为地址，json为json对象
 		json对象转为字符串 var str = JSON.stringify(json);//json为json对象，str为字符串
-		js对象循环 json.forEach(function(val){});//json为js对象，val遍历出的值，json可以为json对象也可以是js对象
+		js对象循环 json.forEach(function(val){});//json为js对象，val遍历出的值，json可以为json对象也可以是js对象，但必须是数组
 		获取js对象的所有key var keys = Object.keys(obj);//obj为js对象，keys为obj的所有key组成的数组
 		获取经纬度代码if(navigator.geolocation){
 						navigator.geolocation.getCurrentPosition(function(position){
@@ -197,7 +201,7 @@ freeCodeCamp js
 					  }
 js正则
 	用法:
-	var exp = /and/gi;
+	var exp = /and/gi;//定义正则也可以用js正则对象 例：var exp = new RegExp("and","gi");
 	var andCount = testString.match(exp).length;匹配testString中and的次数
 	注：/and/gi中
 		/正则的头
@@ -305,6 +309,11 @@ Angular
 				</script>
 小技巧
 	get方法中文转换为utf-8方法 encodeURI
+	按键盘事件onkeydown="if(event.keyCode==13) onbbb();"
+
+http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js
+http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js
+https://cdn.staticfile.org/vue/2.2.2/vue.min.js
 	
 	
 	
