@@ -307,6 +307,8 @@ Angular
 						$scope.name = "John Doe";
 					});
 				</script>
+WebService
+	使用 见 https://www.cnblogs.com/AlanLee/p/6933073.html
 小技巧
 	get方法中文转换为utf-8方法 encodeURI
 	按键盘事件onkeydown="if(event.keyCode==13) onbbb();"

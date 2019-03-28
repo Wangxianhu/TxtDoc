@@ -1,0 +1,45 @@
+java
+	set无序不重复
+	list有序重复
+三种标准注解
+@Override，表示当前的方法定义将覆盖超类中的方法。
+@Deprecated，使用了注解为它的元素编译器将发出警告，因为注解@Deprecated是不赞成使用的代码，被弃用的代码。
+@SuppressWarnings，关闭不当编译器警告信息。
+四种元注解
+@Retention 
+@Target 
+@Document 
+@Inherited
+注解的元素
+	1、看起来就像接口的方法，
+	2、唯一的区别在于可以为其制定默认值。
+	3、没有元素的注解称为标记注解，
+注解处理器
+	原理：注解处理器就是通过反射机制获取被检查方法上的注解信息，然后根据注解元素的值进行特定的处理
+标签处理器
+父子容器
+tomcat容器读取web.xml启动spring容器
+
+ServletContextListener 监听器必须实现的接口
+ContextLoaderListener spring的监听器，继承了ContextLoader（contextInitialized监听器初始化方法）
+ServletContext web容器的（如tomcat）上下文
+WebApplicationContext web应用上下文，代表spring容器，继承ApplicationContext，是个接口
+1、ContextLoader 上下文加载类
+	调用initWebApplicationContext方法初始化spring容器
+		调用createWebApplicationContext方法创建spring容器
+		调用configureAndRefreshWebApplicationContext方法加载配置文件并创建beans
+		调用servletContext.setAttribute方法吧spring容器挂载到web容器
+		
+http协议缺陷
+	只能由客户端发送
+websocketx协议
+	服务器可以主动向客户端推送信息（双向通话）
+	没有同源限制
+	使用
+		发送 触发定义的ws.onopen=function(evt){ ws.send("...") }或 判断ws.readyState==ws.OPEN 调用ws.send("....")方法
+		接收 触发定义的ws.onmessage=function (evt){ console.log(evt.data) }
+		
+		
+tomcat 
+		host代表webapps
+		context代表写的程序

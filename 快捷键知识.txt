@@ -1,0 +1,3 @@
+eclipse
+	alt+/补全
+	alt+shift+l补全部分变量
