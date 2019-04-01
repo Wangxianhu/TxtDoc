@@ -95,6 +95,15 @@ freeCodeCamp js
 		5、symbol(符号)
 		6、number(数字)
 		7、object(对象)
+	进制转换方法
+		var v = a.toString(x)//十进制转其他进制，a为转换前的十进制数值，v为转换后的数值，x为进制 可以为2、8、16、32等
+		var v = parseInt(a,x)//其他进制转十进制，a为转换前的数值，v为转换后的十进制数值，x为进制 可以为2、8、16、32等
+	typeof判断类型
+		例：if(typeof v!=='number'){
+			return NaN;
+		}
+		解：typeof用以获取一个变量或者表达式的类型，一般只有一下几个结果：
+			number,boolean,string,function(函数),object(NULL,数组,对象),undefined.
 	注意
 		1、未实例化的变量初始值为undefined
 		2、运算undefined值时结果为NaN,意思是Not a Number，判断是否是NaN只需判断是否与自身相等即可
@@ -178,6 +187,8 @@ freeCodeCamp js
 		取数组最大或最小值
 			Math.max(...arr);或Math.max(8,9,7);//取最大值，两种写法，一入参纯数字，二入参为数组
 			Math.min(...arr);或Math.min(8,9,7);//取最小值，两种写法，一入参纯数字，二入参为数组
+		判断是否是数组
+			Array.isArray(obj);//判断obj是否是数组，如果是返回true,如果不是返回false
 	js字符串
 		字符串分解为数组var array = string.split(s);//s为分解的字符，可以为""空字符串
 		数组转换为字符串var string = array.join(s);//s为连接符，可以为""空字符串
