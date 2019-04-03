@@ -97,7 +97,17 @@ freeCodeCamp js
 		7、object(对象)
 	进制转换方法
 		var v = a.toString(x)//十进制转其他进制，a为转换前的十进制数值，v为转换后的数值，x为进制 可以为2、8、16、32等
-		var v = parseInt(a,x)//其他进制转十进制，a为转换前的数值，v为转换后的十进制数值，x为进制 可以为2、8、16、32等
+		var v = parseInt(a,x)//其他进制转十进制，a为转换前的数值，v为转换后的十进制数值，x为进制 可以为2、8、16、32等  
+			（parseInt(str)默认用途为字符串转数字，parseInt(str)也可以用于去除小数部分不是四舍五入） 
+			用途例：一个对象的key默认为字符串，对象若以数字为key则自动转为字符串
+			相似方法：parseFloat(str)//也用于字符串转浮点数字，常配合toFixed(num)（四舍五入方法）使用，因为toFixed返回的为字符串
+	js浮点小数失精问题
+		js加减或乘除都会失精
+		例：0.1+0.2
+			16.74*100
+			0.07*100
+		解决方法：
+			常用toFixed(num)方法解决
 	typeof判断类型
 		例：if(typeof v!=='number'){
 			return NaN;
@@ -181,9 +191,9 @@ freeCodeCamp js
 		反转数组方法reverse，旧数组发生变化，数组排序反转
 			例：myArray.reverse();
 		数组拼接concat，旧数组不变
-			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组
+			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组，旧数组不变
 		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）
-				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量
+				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量,用于删除原数组元素
 		取数组最大或最小值
 			Math.max(...arr);或Math.max(8,9,7);//取最大值，两种写法，一入参纯数字，二入参为数组
 			Math.min(...arr);或Math.min(8,9,7);//取最小值，两种写法，一入参纯数字，二入参为数组
