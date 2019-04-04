@@ -192,7 +192,7 @@ freeCodeCamp js
 			例：myArray.reverse();
 		数组拼接concat，旧数组不变
 			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组，旧数组不变
-		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）
+		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）,var carr = arr.slice()可用于copy数组
 				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量,用于删除原数组元素
 		取数组最大或最小值
 			Math.max(...arr);或Math.max(8,9,7);//取最大值，两种写法，一入参纯数字，二入参为数组
