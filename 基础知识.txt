@@ -108,6 +108,9 @@ freeCodeCamp js
 			0.07*100
 		解决方法：
 			常用toFixed(num)方法解决
+	js立即执行函数
+		例：(function(a,b){})(2,4);
+		//2与4就是形参a与b的实参，//好处，内部变量不会与外部变量发生冲突，保护外部变量
 	typeof判断类型
 		例：if(typeof v!=='number'){
 			return NaN;
@@ -170,6 +173,7 @@ freeCodeCamp js
 				}
 				使用
 				var myCar = new Car(4,2);
+		私有与公有的区别(个人理解)，1、私有属于对象，公有属于类（与java类似） 2、私有仅类内可以访问，公有类外可以访问（类似Java） 3、私有用var 定义，公有用this.定义
 	js多参写法 function myfun(...vars) {} //js多参写法，取参数时类似数组
 	js数组常用方法
 		迭代方法用map，旧数组不变，新数组中每个变量加val
