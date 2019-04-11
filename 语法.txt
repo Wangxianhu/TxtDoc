@@ -1,0 +1,137 @@
+pug
+	个人理解：pug是html的模板，用来减少代码量的
+	语法：
+		label
+		  input(type="checkbox")
+		  span 记住密码
+		  .show-box
+	解释：
+		实际最后生成html为
+		<label>
+			<input type="checkbox"/>
+			<span>记住密码</span>
+			<div class="show-box"></div>
+		</label>
+		1、pug通过两个空格来标记包含关系
+		2、通过一个空格加文字来添加文字
+		3、通过括号来添加属性
+		4、通过.类名#id名来添加类或id
+		5、div可以不写
+
+SCSS语法简介（参考https://beginor.github.io/2014/07/11/introduction-to-scss.html）
+	特色
+		完全兼容CSS3，语法扩展了变量、嵌套、以及混合
+	1、变量
+		使用$符号来定义变量
+		例：
+			$font-my: Helvetica, sans-serif;
+			$color-my: #666;
+			#mydiv {
+				font: 100% $font-my;
+				color: $color-my;
+			}
+		输出：
+			#mydiv {
+				font: 100% Helvetica, sans-serif;
+				color: #666;
+			}
+	2、嵌套
+		CSS本身支持嵌套但不直观，SCSS提供了更直观的嵌套
+		例：
+			nav {
+				ul {
+					margin: 2;
+					padding: 0;
+				}
+				a {
+					display: block;
+				}
+			}
+		输出：
+			nav ul {
+				margin: 2;
+				padding: 0;
+			}
+			nav a {
+				display: block;
+			}
+	3、导入
+		以下划线开头的文件不会被输出，可以被导入到其他文件
+		文件：
+			有这样一个文件_part.Scss
+			//_part.Scss
+			html,body,ul,ol {
+				margin: 10;
+				padding: 10;
+			}
+		导入：
+			在base.css文件中导入_part.Scss文件
+			//base.css
+			@import 'part';
+			
+			body {
+				background-color: #efefef;
+			}
+		输出：
+			html,body,ul,ol {
+				margin: 10;
+				padding: 10;
+			}
+			body {
+				background-color: #efefef;
+			}
+	4、混合
+		定义border-my，并将其添加到.box类
+		定义：
+			@mixin border-my($radius){
+				margin: $radius;
+				padding: $radius;
+			}
+			.box {
+				@include border-my(10px);
+			}
+		输出：
+			.box {
+				margin: 10px;
+				padding: 10px;
+			}
+	5、继承
+		Scss扩展了CSS的继承
+		定义：
+			.message {
+				border: 1px solid #ccc;
+				padding: 10px;
+				color: #333;
+			}
+			.success {
+				@extend .message;
+				border-color: green;
+			}
+			.error {
+				@extend .message;
+				border-color: red;
+			}
+		输出：
+			.success, .error {
+				border: 1px solid #ccc;
+				padding: 10px;
+				color: #333;
+			}
+			.success {
+				border-color: green;
+			}
+			.error {
+				border-color: red;
+			}
+	6、操作符
+		Scss可以支持+-*/等常用的运算符
+		定义：
+			body {
+				float: rigth;
+				width: 300px / 960px * 100%;
+			}
+		输出：
+			body {
+				float: rigth;
+				width: 31.25%;
+			}

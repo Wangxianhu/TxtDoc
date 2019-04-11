@@ -1,0 +1,176 @@
+库
+	http://cdn.staticfile.org/jquery/1.9.1/jquery.min.js
+	http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js
+	https://cdn.staticfile.org/vue/2.2.2/vue.min.js
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>  
+跨域
+	$.ajax({
+		url:"", 
+		dataType:"jsonp",
+		success:function(data){	
+		},
+		error:function(){ 	
+		}
+	});
+freeCodeCamp js	
+	七种数据类型
+		1、undefined(未定义)
+		2、null(空)
+		3、Boolean(布尔型)
+		4、string(字符串)
+		5、symbol(符号)
+		6、number(数字)
+		7、object(对象)
+	进制转换方法
+		var v = a.toString(x)//十进制转其他进制，a为转换前的十进制数值，v为转换后的数值，x为进制 可以为2、8、16、32等
+		var v = parseInt(a,x)//其他进制转十进制，a为转换前的数值，v为转换后的十进制数值，x为进制 可以为2、8、16、32等  
+			（parseInt(str)默认用途为字符串转数字，parseInt(str)也可以用于去除小数部分不是四舍五入） 
+			用途例：一个对象的key默认为字符串，对象若以数字为key则自动转为字符串
+			相似方法：parseFloat(str)//也用于字符串转浮点数字，常配合toFixed(num)（四舍五入方法）使用，因为toFixed返回的为字符串
+	js浮点小数失精问题
+		js加减或乘除都会失精
+		例：0.1+0.2
+			16.74*100
+			0.07*100
+		解决方法：
+			常用toFixed(num)方法解决
+	js立即执行函数
+		例：(function(a,b){})(2,4);
+		//2与4就是形参a与b的实参，//好处，内部变量不会与外部变量发生冲突，保护外部变量
+	typeof判断类型
+		例：if(typeof v!=='number'){
+			return NaN;
+		}
+		解：typeof用以获取一个变量或者表达式的类型，一般只有一下几个结果：
+			number,boolean,string,function(函数),object(NULL,数组,对象),undefined.
+	注意
+		1、未实例化的变量初始值为undefined
+		2、运算undefined值时结果为NaN,意思是Not a Number，判断是否是NaN只需判断是否与自身相等即可
+	js常用属性
+		.length 获取字串长度
+	js是基于零的索引，js可以直接在字符串上用中括号直接获取字符 例；var myName = "xiaoming";myName[0];
+	字符串值是不可变的 例：myName[0]="n"; （但可以通过重新赋值来达到修改效果 例：myName="niaoming";)
+	.push(obj);在尾部添加对象
+	.unshift(obj);在首部添加对象
+	var obj = array.pop();//数组array的最后一个元素被移除，同时赋值给obj
+	var obj = array.shift();//数组array的第一个元素移除，同时赋值给obj
+	js进行==运算时会进行类型转换，从而 1=='1' 会为true，然而===严格相等运算符则不一样，会同时比较类型 会为false，!=和!==同理。
+	switch用法：
+	  switch(val){
+    case "a":
+      answer="apple";
+      break;
+    case "b":
+      answer="bird";
+      break;
+    case "c":
+      answer="cat";
+      break;
+    default:
+      answer="stuff";
+	}  
+	  switch(val){
+    case "a":
+    case "b":
+    case "c":
+      answer="a or b or c";
+      break;
+    default:
+      answer="other";
+	}  
+	js 访问object的内容有两种，一种是object点key，另一种是object加中括号key 这种适用于key含空格的这种情况 key外加引号，还可以用object中括号自定义变量获取value 自定义变量名不需要加引号
+	删除对象里的属性 例：delete myDog.tails;
+	检查对象属性是否存在 obj.hasOwnProperty(key) 如果有则true，没有false
+	随机数生成Math.random()，生成0到1(包括零不包括一)
+	向下取整Math.floor()
+	js创建对象
+		第一种创建 var obj = {"name":"objname","value":"objvalue"};
+		第二种创建 var Car = function(wheels,seats){//构造函数
+					this.wheels = wheels;
+					this.seats = seats;
+					this.engines = 1;//上面三个都是公有属性（特征this）
+					var speed = 10;//私有属性（特征var）
+					this.setSpeed = function(speed1){
+						speed = speed1;
+					};
+					this.getSpeed = function(){
+						return speed;
+					};//上面两个都是公有方法
+				}
+				使用
+				var myCar = new Car(4,2);
+		私有与公有的区别(个人理解)： 1、私有仅类内可以访问，公有类外可以访问（类似Java） 2、私有用var 定义，公有用this.定义
+	js多参写法 function myfun(...vars) {} //js多参写法，取参数时类似数组
+	js数组常用方法
+		迭代方法用map，旧数组不变，新数组中每个变量加val
+			例：var newArray = oldArray.map(function(val){
+				  return val+3;
+				});
+		归纳累加方法reduce，旧数组不变，新变量为数组数之和加上第二个参数7（或者不用第二个变量，这是便是纯数组累加）
+			例：var singleVal = array.reduce(function(pre,curr){
+				  return pre+curr;
+				},7);
+		过滤数组方法filter，旧数组不变，回调函数返回true保留返回false移除
+			例：var newArray = oldArray.filter(function(val){
+					return val<7;
+				});
+		排序数组方法sort,旧数组变，无回调函数时按字母顺序排序，有回调按数字大小排序
+			例：array.sort(function(a,b){
+					return a-b;//从小到大排序，b-a从大到小排序
+				});
+		反转数组方法reverse，旧数组发生变化，数组排序反转
+			例：myArray.reverse();
+		数组拼接concat，旧数组不变
+			var newArray = oldArray.concat(otherArray);//新数组时旧数组拼接otherArray后的数组，旧数组不变
+		数组截取 1、arr.slice(start,end);//start开始，end结束（包头不包尾）,var carr = arr.slice()可用于copy数组
+				 2、arr.splice(start,num);//原数组发生变化，start开始，num截取数量,用于删除原数组元素
+		取数组最大或最小值
+			Math.max(...arr);或Math.max(8,9,7);//取最大值，两种写法，一入参纯数字，二入参为数组
+			Math.min(...arr);或Math.min(8,9,7);//取最小值，两种写法，一入参纯数字，二入参为数组
+		判断是否是数组
+			Array.isArray(obj);//判断obj是否是数组，如果是返回true,如果不是返回false
+	js字符串
+		字符串分解为数组var array = string.split(s);//s为分解的字符，可以为""空字符串
+		数组转换为字符串var string = array.join(s);//s为连接符，可以为""空字符串
+		字符串根据正则替换var str1 = str.replace(reg,s);//reg为正则，s为要替换后的字串
+		字符串大小写转换var str1 = str.toLowerCase();//转换为小写
+		字符串大小写转换var str1 = str.toUpperCase();//转换为大写
+		字符串提取var str1 = str.substring(start,stop);//提取字符串str的子字符串start开始，stop结束，包头不包尾
+		字符串提取var str1 = str.substr(start,length);//提取字符串start开始下标，length截取长度
+		字符串查找var i = str.indexOf(str1);//查找字符串在另一字符串中的位置如果没有返回-1，此方法也可用于数组
+		字符串查找var charcode = str.charCodeAt(index);//查找指定下标的字符Unicode数字，index下标，charcode为unicode数字，没有时返回NaN
+		unicode数字转字符串var str = String.fromCharCode(charcode1,charcode2...);//str为charcode转换后的字符串，入参可以有多个
+	json和ajax
+		获取json的ajax $.getJSON("url",function(json){});//url为地址，json为json对象
+		json对象转为字符串 var str = JSON.stringify(json);//json为json对象，str为字符串
+		js对象循环 json.forEach(function(val){});//json为js对象，val遍历出的值，json可以为json对象也可以是js对象，但必须是数组
+		获取js对象的所有key var keys = Object.keys(obj);//obj为js对象，keys为obj的所有key组成的数组
+		获取经纬度代码if(navigator.geolocation){
+						navigator.geolocation.getCurrentPosition(function(position){
+						  $("#data").html("latitude:"+position.coords.latitude+"<br>longitude:"+position.coords.longitude);
+						});
+					  }
+	js Math函数
+		Math.PI;//Π即圆周率
+		Math.pow(x,a);//计算x的a次幂
+		Math.sqrt(x);//计算x的平方根
+js正则
+	用法:
+	var exp = /and/gi;//定义正则也可以用js正则对象 例：var exp = new RegExp("and","gi");
+	var andCount = testString.match(exp).length;匹配testString中and的次数
+	注：/and/gi中
+		/正则的头
+		and要匹配的模式
+		/正则的尾
+		g代表全局（global）匹配
+		i代表忽略大小写
+		\d数字选择器（类似/\d+/g，其中的加是匹配一个或多个数字）
+		\s空白选择器（类似/\s+/g，其中空白字符可能是空格、回车、换行、制表、换页））
+		\S非空白选择器（匹配所有非空白字符，没有+只匹配一个）
+		^匹配输入开始
+		$匹配输入结束
+		(A|B)匹配A或B表达式
+小技巧
+	get方法中文转换为utf-8方法 encodeURI
+	按键盘事件onkeydown="if(event.keyCode==13) onbbb();"

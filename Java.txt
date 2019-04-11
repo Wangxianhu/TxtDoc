@@ -37,9 +37,29 @@ websocketx协议
 	没有同源限制
 	使用
 		发送 触发定义的ws.onopen=function(evt){ ws.send("...") }或 判断ws.readyState==ws.OPEN 调用ws.send("....")方法
-		接收 触发定义的ws.onmessage=function (evt){ console.log(evt.data) }
-		
-		
+		接收 触发定义的ws.onmessage=function (evt){ console.log(evt.data) }		
 tomcat 
 		host代表webapps
 		context代表写的程序
+		
+maven构建
+	1. 在eclipse 构建 web中关于java版本有三处需要修改统一。
+		（1）在Java Build Path的libraries中修改
+		（2）在Java Compiler 中修改
+		（3）在Project Facet中修改
+	2. 大部分按上上述修改就应该可以了，但总是有意外，还是报错。因为使用了 maven构建项目，因而最好在pom.xml文件中的build标签中加入以下代码：
+		<build>
+		  <plugins>
+			   <plugin>
+					 <groupId>org.apache.maven.plugins</groupId>
+					 <artifactId>maven-compiler-plugin</artifactId>
+					 <version>3.1</version>
+					 <configuration>
+						 <source>1.7</source>     //如果是1.8，修改为1.8
+						 <target>1.7</target>      //如果是1.8，修改为1.8
+					 </configuration>
+			   </plugin>
+		  </plugins>
+		</build>
+WebService
+	使用 见 https://www.cnblogs.com/AlanLee/p/6933073.html
