@@ -63,3 +63,24 @@ maven构建
 		</build>
 WebService
 	使用 见 https://www.cnblogs.com/AlanLee/p/6933073.html
+	webservice采用http协议传输数据，xml格式封装、发送、接受数据
+	RPC远程调用协议
+	webService平台技术（XML+XSD,SOAP,WSDL三大技术）
+		1、XML+XSD（XSD=XML Schema）
+			xml封装数据
+			xsd定义数据类型
+		2、SOAP协议
+			soap(simple object access protocal简单对象访问协议)
+			webservice增加了http头消息，以说明http消息的内容格式
+			soap协议=http协议+xml数据格式
+		3、WSDL语言
+			wsdl(web服务描述语言)描述函数、参数、返回值
+			根据wsdl生成相应的webservice的代理类代码
+	1.通过wsimport生成代码
+    2.通过客户端编程方式
+    3.通过ajax调用方式
+    4.通过 URL Connection 方式调用
+	
+	
+	
+	

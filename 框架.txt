@@ -89,3 +89,29 @@ Angular
 						$scope.name = "John Doe";
 					});
 				</script>
+springmvc
+	用@RestController来自动转化json
+	1、添加maven依赖
+		<!-- Jackson Json处理工具包         springmvc的restcontroller会用到 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+	2、springmvc配置文件添加
+		<!-- 注解驱动: 作用是替我们自动配置最新版本的注解形式的处理器映射器和处理器适配器 -->
+		<!-- <mvc:annotation-driven/> -->
+		<mvc:annotation-driven>
+			<mvc:message-converters register-defaults="true">
+				<!-- 让@ResponseBody/@RequestBody注解自动转换json -->
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</mvc:message-converters>
+		</mvc:annotation-driven>
