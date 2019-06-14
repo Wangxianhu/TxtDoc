@@ -81,6 +81,54 @@ WebService
     3.通过ajax调用方式
     4.通过 URL Connection 方式调用
 	
+命令
+	编译 javac helloworld.java
+		如果有中文就用 javac helloworld.java -encoding UTF-8 (否则java默认用gbk编码格式)
+	执行 java helloworld
+	
+	带包编译 
+		javac a.java -d . (以当前路径为基准，自动创建包路径，-d .词放在前后都可以)
+		javac a.java -d fi (将文件编译到fi路径下)
+	带包执行 
+		java mypack.a (mypack为a.java文件中定义的包名)
+		java -cp fi mypack.a （-cp 指定.class所在根目录）
+	编译引入自定义类
+		方案一
+			javac -d . b.java a.java
+			或javac -d . *.java
+		方案二
+			1、javac -d . mypack/a.java
+			(会将引用类一并打包，条件是被引用类的包与引用类的包在相同根目录)
+			2、假如在不同的根目录下可以用-cp指定被引用类的根目录
+			例：javac -cp e:cc -d . mypack/a.java
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

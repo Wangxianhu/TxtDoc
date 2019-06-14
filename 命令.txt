@@ -24,4 +24,5 @@ dos命令
 	cd doca\docb\	(跳转目录)
 	dir	(查看路径下文件和文件夹)
 shell命令
-	查进程ps -ef |grep tomcat
+	查进程:ps -ef |grep tomcat
+	启动jar包:java -jar xxx.jar

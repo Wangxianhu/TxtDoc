@@ -1,1 +1,2 @@
 https://start.spring.io/ 自动生成Springboot maven工程
+https://blog.csdn.net/yickreesuen/article/details/79092933 发布Springboot的两种方法
