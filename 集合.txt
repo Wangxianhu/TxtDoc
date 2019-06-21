@@ -9,3 +9,61 @@ map会根据hashCode决定元素存储位置
 
 
 arraylist底层是基于数组的，构造器入参int值为数组的长度，如果没有传入int则数组长度默认为10
+
+
+public V put(K key, V value){
+	//如果key为null,调用putForNullKey方法进行处理
+	if(key == null)
+		return putForNullKey(value);
+	//根据key的keyCode计算Hash值
+	int hash = hash(key.hashCode());
+	//
+	
+	
+	获取hashcode
+	1如果table里没有就存进去
+	2调用equals比较相同，不存
+	3调用equals比较不同，散列其他地址
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
