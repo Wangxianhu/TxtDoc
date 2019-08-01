@@ -174,3 +174,54 @@ js正则
 小技巧
 	get方法中文转换为utf-8方法 encodeURI
 	按键盘事件onkeydown="if(event.keyCode==13) onbbb();"
+ES6新特性
+	1、新增数据定义类型
+		no.1 let-局部变量
+		no.2 const-静态变量
+	2、新增api
+		no.1 includes()-返回是否包含指定字符串（布尔类型）
+		no.2 startsWith()-返回是否以指定字符串开头（布尔类型）
+		no.3 endsWith()-返回是否以指定字符串结尾（布尔类型）
+	3、字符串的扩展
+		no.1 定义字符串可以用``包含字符串，特殊之处在于``内可以任意加换行
+	4、解构表达式
+		no.1 数组的解构：可以用let [x,y,z] = arr;也可以用let [x2] = arr;的形式
+		no.2 对象的解构：可以用let {name,age} = obj;也可以用let {name:a,age:b} = obj;的形式
+	5、函数参数的默认值
+		no.1 定义函数：function add(a,b=5){return a+b;};调用函数：add(8);（调用可以不传第二参数）
+	6、箭头函数
+		no.1 没有参数的情况   定义：let sayHello = () => console.log(hello);调用：sayHello();
+		no.2 有一个参数的情况 定义：let print = a => console.log(a);调用：print('hello');
+		no.3 有多个参数多行代码的情况 定义：let sum = (a,b) => {return a+b;};调用：sum(5,5);
+	7、对象函数简写
+		no.1 不简写情况 let obj = { say:function(a){console.log(a)}};
+		no.2 箭头函数简写 let obj = {say:a => console.log(a)};
+		no.3 直接简写 let obj = {say(a){console.log(a)}};
+	8、数组对象的map和reduse方法
+		no.1 map方法 入参为函数，返回值是一个新数组，作用为用函数处理数组的每一个参数并把处理后的参数加入新数组返回
+		no.2 reduse方法 入参为函数和初始值，返回为数值，作用为处理数组的每一个参数并把结果作为下次处理的值传入
+	9、数组的扩展与合并（...是扩展运算符）
+		no.1 数组的扩展 例：function add(a,b,c,d){return a+b+c+d;}; 使用：add(0,...[1,2],3);
+		no.2 数组的合并 例：let arr = [0,...[1,2],3];
+		no.3 字符串转数组 例 let arr = [...'hello'];
+	10、Promise的使用，可也封装异步执行的结果
+		let p = new Promise((resolve,reject)=>{
+			if(true){
+				resolve('执行成功');
+			}else{
+				reject('执行失败');
+			}
+		});
+		p.then(
+			msg=>console.log(msg);
+		).catch(
+			msg=>console.log(msg);
+		);
+	11、map与set对象
+		no.1 set对象 构造方法：let s = new Set()或let s = new Set([1,2,4]); 性质类似与java中的set
+		no.2 map对象 构造方法：
+			1）通过数组 let m = new Map([['k1','v1'],['k2','v2']]);
+			2）通过set对象 let m = new Map(new Set());
+			3）通过map对象 let m = new Map(m);
+			性质类似与js的object对象,不同点是object对象的key只能是字符串,map对象的key可以是object
+	
